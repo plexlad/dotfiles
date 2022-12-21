@@ -30,4 +30,15 @@ km("n", "<S-h>", ":bprevious<CR>", opts)
 -- Insert --
 -- Press jk fast to enter
 km("i", "jk", "<ESC>", opts)
+-- Autobrackets
+km("i", '"', '""<left>', opts)
+km("i", "'", "''<left>", opts)
+km("i", "(", "()<left>", opts)
+km("i", "[", "[]<left>", opts)
+km("i", "{", "{}<left>", opts)
+km("i", "{<CR>", "{<CR>}<ESC>O", opts)
+km("i", "{;<CR>", "{<CR>};<ESC>O", opts)
 
+-- Plugins --
+-- Telescope Shortcuts
+km("n", "<leader>s", ":Telescope<CR>", opts)
