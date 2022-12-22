@@ -1,6 +1,4 @@
 local fn = vim.fn
-
--- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
@@ -42,18 +40,51 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  
-  -- Dependancies!
+
+  -- Dependancies --
   use "nvim-lua/plenary.nvim"
   use "nvim-lua/popup.nvim"
 
+  -- Neat plugins
   use "nvim-telescope/telescope.nvim" -- Fuzzy finder!
-  use {
+  use { -- Auto bracket pairing
     "windwp/nvim-autopairs",
 	 config = function() require("nvim-autopairs").setup {} end
   }
-  use "michaelb/do-nothing.vim"
+  use {
+	 "nvim-tree/nvim-tree.lua",
+	 requires = {
+	   "nvim-tree/nvim-web-devicons", -- File Icons
+    }
+  }
+  -- Disables netrw for tree
+  vim.g.loaded_netrw, vim.g.loaded_netrwPlugin = 1
+  require("nvim-tree").setup()
+
+  use "michaelb/do-nothing.vim" -- Literally does nothing
+
+  -- Completion --
+  use "hrsh7th/nvim-cmp" -- Adds autocompletion, extensions below
+  use "hrsh7th/cmp-buffer" -- Buffer completions
+  use "hrsh7th/cmp-path" -- Path completions
+  use "hrsh7th/cmp-cmdline" -- Command line completions
+  use "saadparwaiz1/cmp_luasnip" -- Completion source for nvim-cmp
+  use "David-Kunz/cmp-npm" -- NPM package completion
+
+  -- LSP -- 
+  use "VonHeikemen/lsp-zero.nvim"
+  use "neovim/nvim-lspconfig"
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use "hrsh7th/cmp-nvim-lsp"
+
+  -- Snippets
+  use { "L3MON4D3/LuaSnip", run = "make install_jsreqexp" }
+  use "rafamadriz/friendly-snippets"
+
+  -- Themes -- 
   use "navarasu/onedark.nvim"
+  use "ellisonleao/gruvbox.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -61,4 +92,3 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
-
