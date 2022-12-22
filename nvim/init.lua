@@ -1,8 +1,11 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.cmp"
-require "user.lsp"
+local user = "plexlad";
+local colorscheme = "onedark";
+
+require "plexlad.cmp"
+require "plexlad.keymaps"
+require "plexlad.lsp"
+require "plexlad.options"
+require "plexlad.plugins"
 
 -- Variables --
 local colorscheme = "onedark"
