@@ -60,6 +60,7 @@ return packer.startup(function(use)
   -- Disables netrw for tree
   vim.g.loaded_netrw, vim.g.loaded_netrwPlugin = 1
   require("nvim-tree").setup()
+  use "nvim-treesitter/nvim-treesitter"
 
   use "michaelb/do-nothing.vim" -- Literally does nothing
 
