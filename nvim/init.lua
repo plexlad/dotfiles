@@ -1,14 +1,12 @@
+-- VARIABLES --
 local user = "plexlad";
 local colorscheme = "onedark";
 
-require "plexlad.cmp"
-require "plexlad.keymaps"
-require "plexlad.lsp"
-require "plexlad.options"
 require "plexlad.plugins"
-
--- Variables --
-local colorscheme = "onedark"
+require "plexlad.options"
+require "plexlad.keymaps"
+require "plexlad.cmp"
+require "plexlad.lsp"
 
 -- Uses a protected call to check for an error when checking colorscheme
 if not pcall(vim.cmd, "colorscheme " .. colorscheme) then
