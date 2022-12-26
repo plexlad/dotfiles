@@ -1,0 +1,100 @@
+{
+	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+	"palette": {
+		"light_gray": "#ABB2BF",
+		"dark_gray": "#282C34",
+		"red": "#E06C75",
+		"green": "#98C379",
+		"yellow": "#E5C07B",
+		"blue": "#61AFEF",
+		"purple": "#C678DD",
+		"teal": "#56B6C2",
+		"white": "#ffffff"
+	},
+	"blocks": [
+		{
+			"alignment": "right",
+			"segments": [
+				{
+					"background": "p:green",
+					"foreground": "p:white",
+					"leading_diamond": "\ue0b6",
+					"trailing_diamond": "\ue0b4 ",
+					"style": "diamond",
+					"type": "node",
+					"template": "\ue718 {{ .Full }}"
+				},
+				{
+					"background": "p:teal",
+					"foreground": "p:white",
+					"leading_diamond": "\ue0b6",
+					"trailing_diamond": "\ue0b4 ",
+					"style": "diamond",
+					"type": "spotify",
+					"template": "\uf1bc {{ .Icon }}{{ .Track }} - {{ .Artist }}"
+				},
+				{
+					"background": "p:yellow",
+					"foreground": "p:white",
+					"leading_diamond": "\ue0b6",
+					"trailing_diamond": "\ue0b4",
+					"style": "diamond",
+					"type": "git",
+					"template": "\u279c {{ .HEAD }}",
+					"properties": {
+						"branch_icon": "\ufb2b "
+					}
+				}
+			],
+			"type": "rprompt"
+		},
+		{
+			"alignment": "left",
+			"segments": [
+				{
+					"foreground": "p:white",
+					"background": "p:red",
+					"style": "diamond",
+					"leading_diamond": "\ue0b6",
+					"type": "os",
+					"template": "{{ .Icon }} "
+				},
+				{
+					"background": "p:dark_gray",
+					"foreground": "p:light_gray",
+					"style": "powerline",
+					"powerline_symbol": "",
+					"template": " {{ .UserName }}@{{ .HostName }} ",
+					"type": "session"
+				},
+				{
+					"background": "p:red",
+					"foreground": "p:white",
+					"powerline_symbol": "\ue0b0",
+					"properties": {
+						"style": "agnoster_short",
+						"folder_icon": "..\ufc6e.."
+					},
+					"style": "powerline",
+					"template": " {{ .Path }} ",
+					"type": "path"
+				},
+				{
+					"foreground": "p:light_gray",
+					"style": "plain",
+					"type": "root",
+					"template": " $"
+				},
+				{
+					"foreground": "p:light_gray",
+					"style": "plain",
+					"type": "text",
+					"template": " >"
+				}
+			],
+			"type": "prompt"
+		}
+	],
+	"final_space": true,
+	"version": 2
+}
