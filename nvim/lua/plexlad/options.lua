@@ -31,4 +31,4 @@ o.signcolumn = "yes"
 o.wrap = true
 o.scrolloff = 8
 o.sidescrolloff = 8
-o.guifont = "Jetbrains Mono"
+o.guifont = "JetbrainsMono Nerd Font"

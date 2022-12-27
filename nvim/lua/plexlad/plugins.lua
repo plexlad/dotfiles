@@ -51,18 +51,54 @@ return packer.startup(function(use)
     "windwp/nvim-autopairs",
 	 config = function() require("nvim-autopairs").setup {} end
   }
-  use {
-	 "nvim-tree/nvim-tree.lua",
-	 requires = {
-	   "nvim-tree/nvim-web-devicons", -- File Icons
-    }
-  }
+  use "nvim-tree/nvim-web-devicons"
+  use "nvim-tree/nvim-tree.lua"
   -- Disables netrw for tree
   vim.g.loaded_netrw, vim.g.loaded_netrwPlugin = 1
   require("nvim-tree").setup()
-  use "nvim-treesitter/nvim-treesitter"
 
   use "michaelb/do-nothing.vim" -- Literally does nothing
+  use ({
+    "folke/noice.nvim",
+	config = function()
+	  require("noice").setup({
+	    lsp = {
+		  -- Overrides markdown editing
+		  override = {
+			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+			["vim.lsp.util.stylize_markdown"] = true,
+		    ["cmp.entry.get_documentation"] = true
+	      },
+		},
+	  presets = {
+		  bottom_search = true, -- uses bottom for search
+		  command_palette = true, -- position the cmdline and popupmenu together
+		  long_message_to_split = true, -- Long messages go to a split
+		  inc_rename = false,
+		  lsp_doc_border = false
+	  },
+	})
+	end,
+	requires = {
+		"MunifTanjim/nui.nvim",
+		"rcarriga/nvim-notify"
+	}
+  })
+  use {
+	  "folke/trouble.nvim",
+	  requires = "kyazdani42/nvim-web-devicons",
+	  config = function ()
+	    require("trouble").setup {
+
+		}
+	  end
+  }
+
+  -- HTML
+  use "alvan/vim-closetag" -- Closes HTML tags
+  use "AndrewRadev/tagalong.vim" -- Change two HTML tags at the same time
+  use "turbio/bracey.vim" -- HTML live server (with cool features)
+  use {"akinsho/bufferline.nvim", requires = "nvim-tree/nvim-web-devicons"}
 
   -- Completion --
   use "hrsh7th/nvim-cmp" -- Adds autocompletion, extensions below
@@ -86,6 +122,7 @@ return packer.startup(function(use)
   -- Themes -- 
   use "navarasu/onedark.nvim"
   use "ellisonleao/gruvbox.nvim"
+  use "catppuccin/nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

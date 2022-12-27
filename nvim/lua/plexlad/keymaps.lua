@@ -1,7 +1,4 @@
 local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
-
 local km = vim.api.nvim_set_keymap
 
 km("", "<Space>", "<Nop>", opts)
@@ -17,9 +14,14 @@ km("n", "<C-l>", "<C-w>l", opts)
 
 km("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- Open file explorer to the left
 
--- New Windows
-km("n", "<leader>wv", ":vertical split", opts)
-km("n", "<leader>wh", ":split", opts)
+-- Split windows
+km("n", "<leader>wv", ":vertical split<CR>", opts)
+km("n", "<leader>wh", ":split<CR>", opts)
+
+-- New tab
+km("n", "<leader>n", ":tabnew<CR>", opts)
+km("n", "<leader>l", ":tabnext<CR>", opts)
+km("n", "<leader>h", ":tabprevious<CR>", opts)
 
 -- Resize with arrows
 km("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -44,5 +46,9 @@ km("i", "jk", "<ESC>", opts)
 --km("i", "{;<CR>", "{<CR>};<ESC>O", opts)
 
 -- Plugins --
--- Telescope Shortcuts
-km("n", "<leader>s", ":Telescope<CR>", opts)
+-- Telescope shortcuts
+km("n", "<leader>sf", ":Telescope find_files<CR>", opts)
+
+-- folke plugins
+-- trouble
+km("n", "<leader>t", ":Trouble<CR>", opts)
