@@ -48,8 +48,10 @@ return packer.startup(function(use)
   -- Neat plugins
   use "nvim-telescope/telescope.nvim" -- Fuzzy finder!
   use { -- Auto bracket pairing
-    "windwp/nvim-autopairs",
-	 config = function() require("nvim-autopairs").setup {} end
+    "m4xshen/autoclose.nvim",
+	config = function()
+	  require("autoclose").setup({})
+	end
   }
   use "nvim-tree/nvim-web-devicons"
   use "nvim-tree/nvim-tree.lua"
@@ -93,12 +95,24 @@ return packer.startup(function(use)
 		}
 	  end
   }
+  use {
+    "phaazon/mind.nvim",
+	requires = { "nvim-lua/plenary.nvim" },
+	config = function()
+	  require'mind'.setup()
+	end
+  }
+  use {
+	  "ThePrimeagen/harpoon",
+	  {
+		  requires = { "ThePrimeagen/harpoon" }
+	  }
+  }
 
   -- HTML
   use "alvan/vim-closetag" -- Closes HTML tags
   use "AndrewRadev/tagalong.vim" -- Change two HTML tags at the same time
-  use "turbio/bracey.vim" -- HTML live server (with cool features)
-  use {"akinsho/bufferline.nvim", requires = "nvim-tree/nvim-web-devicons"}
+  use {"akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons"}
 
   -- Completion --
   use "hrsh7th/nvim-cmp" -- Adds autocompletion, extensions below

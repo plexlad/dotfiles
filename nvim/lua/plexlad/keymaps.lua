@@ -52,3 +52,8 @@ km("n", "<leader>sf", ":Telescope find_files<CR>", opts)
 -- folke plugins
 -- trouble
 km("n", "<leader>t", ":Trouble<CR>", opts)
+
+-- Mind
+km("n", "<leader>mm", ":MindOpenMain<CR>", opts)
+km("n", "<leader>mp", ":MindOpenSmartProject", opts)
+km("n", "<leader>mc", ":MindClose<CR", opts)
