@@ -102,12 +102,6 @@ return packer.startup(function(use)
 	  require'mind'.setup()
 	end
   }
-  use {
-	  "ThePrimeagen/harpoon",
-	  {
-		  requires = { "ThePrimeagen/harpoon" }
-	  }
-  }
 
   -- HTML
   use "alvan/vim-closetag" -- Closes HTML tags
@@ -120,7 +114,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- Path completions
   use "hrsh7th/cmp-cmdline" -- Command line completions
   use "saadparwaiz1/cmp_luasnip" -- Completion source for nvim-cmp
-  use "David-Kunz/cmp-npm" -- NPM package completion
 
   -- LSP -- 
   use "VonHeikemen/lsp-zero.nvim"
@@ -136,7 +129,6 @@ return packer.startup(function(use)
   -- Themes -- 
   use "navarasu/onedark.nvim"
   use "ellisonleao/gruvbox.nvim"
-  use "catppuccin/nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
