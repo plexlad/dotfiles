@@ -48,6 +48,7 @@ km("i", "jk", "<ESC>", opts)
 -- Plugins --
 -- Telescope shortcuts
 km("n", "<leader>sf", ":Telescope find_files<CR>", opts)
+km("n", "<leader>st", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 
 -- folke plugins
 -- trouble
@@ -55,5 +56,5 @@ km("n", "<leader>t", ":Trouble<CR>", opts)
 
 -- Mind
 km("n", "<leader>mm", ":MindOpenMain<CR>", opts)
-km("n", "<leader>mp", ":MindOpenSmartProject", opts)
-km("n", "<leader>mc", ":MindClose<CR", opts)
+km("n", "<leader>mp", ":MindOpenSmartProject<CR>", opts)
+km("n", "<leader>mc", ":MindClose<CR>", opts)

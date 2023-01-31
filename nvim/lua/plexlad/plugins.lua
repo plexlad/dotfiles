@@ -56,7 +56,7 @@ return packer.startup(function(use)
   use "nvim-tree/nvim-web-devicons"
   use "nvim-tree/nvim-tree.lua"
   -- Disables netrw for tree
-  vim.g.loaded_netrw, vim.g.loaded_netrwPlugin = 1
+  vim.g.loaded_netrw, vim.g.loaded_netrwPlugin = 1, 1
   require("nvim-tree").setup()
 
   use "michaelb/do-nothing.vim" -- Literally does nothing
@@ -73,9 +73,9 @@ return packer.startup(function(use)
 	      },
 		},
 	  presets = {
-		  bottom_search = true, -- uses bottom for search
+		  bottom_search = true,
 		  command_palette = true, -- position the cmdline and popupmenu together
-		  long_message_to_split = true, -- Long messages go to a split
+		  long_message_to_split = true,
 		  inc_rename = false,
 		  lsp_doc_border = false
 	  },
@@ -102,11 +102,25 @@ return packer.startup(function(use)
 	  require'mind'.setup()
 	end
   }
+  use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+	  config = function()
+		require('lualine').setup {
+			sections = {
+				lualine_a = {'mode'},
+				lualine_b = {'branch', 'diff', 'diagnostics'},
+				lualine_y = {'progress'},
+				lualine_z = {'location'}
+			}
+		}
+	end
+  }
+  use "andweeb/presence.nvim"
 
   -- HTML
   use "alvan/vim-closetag" -- Closes HTML tags
   use "AndrewRadev/tagalong.vim" -- Change two HTML tags at the same time
-  use {"akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons"}
 
   -- Completion --
   use "hrsh7th/nvim-cmp" -- Adds autocompletion, extensions below
@@ -128,7 +142,6 @@ return packer.startup(function(use)
 
   -- Themes -- 
   use "navarasu/onedark.nvim"
-  use "ellisonleao/gruvbox.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -26,6 +26,7 @@ o.expandtab = tab
 o.shiftwidth = 4
 o.tabstop = 4
 o.number = true
+o.relativenumber = true
 o.relativenumber = false
 o.signcolumn = "yes"
 o.wrap = true
