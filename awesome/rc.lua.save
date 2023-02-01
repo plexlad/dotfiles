@@ -1,5 +1,5 @@
--- Configuration 
-local terminal = "kitty"
+n-- Configuration 
+local terminal = "alacritty"
 local modkey = "Mod4"
 
 -- If LuaRocks is installed, make sure that packages installed through it are
@@ -49,7 +49,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 local editor = os.getenv("EDITOR") or "nvim"
@@ -498,7 +498,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = false }
+      }, properties = { titlebars_enabled = true }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -570,8 +570,3 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
--- Startup Programs --
-awful.spawn("polybar")
-awful.spawn("nitrogen --restore")
-awful.spawn("picom")

@@ -91,7 +91,6 @@ return packer.startup(function(use)
 	  requires = "kyazdani42/nvim-web-devicons",
 	  config = function ()
 	    require("trouble").setup {
-
 		}
 	  end
   }
@@ -121,6 +120,12 @@ return packer.startup(function(use)
   -- HTML
   use "alvan/vim-closetag" -- Closes HTML tags
   use "AndrewRadev/tagalong.vim" -- Change two HTML tags at the same time
+  use  {
+	  "norcalli/nvim-colorizer.lua", -- Adds color visualizer!
+	  config = function()
+		require'colorizer'.setup()
+	end
+  }
 
   -- Completion --
   use "hrsh7th/nvim-cmp" -- Adds autocompletion, extensions below
