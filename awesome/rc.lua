@@ -573,6 +573,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Startup Programs --
-awful.spawn("polybar")
-awful.spawn("nitrogen --restore")
 awful.spawn("picom")
+awful.spawn("nitrogen --restore")
+awful.spawn("polybar")
