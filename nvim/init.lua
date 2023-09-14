@@ -1,6 +1,6 @@
 -- VARIABLES --
 local user = "plexlad";
-local colorscheme = "onedark";
+local colorscheme = "gruvbox";
 
 require "plexlad.plugins"
 require "plexlad.options"
