@@ -10,6 +10,9 @@ These are my dotfiles, my way that I configure everything! My personal preferenc
  * Neovim
  * Picom
  * Polybar
+ * Rofi
+ * Oh My Posh
+ * tmux
  * Other preferences and goodies! (wallpapers and omp theme)
 
 Always in the works!
