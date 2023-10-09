@@ -59,33 +59,14 @@ return packer.startup(function(use)
   vim.g.loaded_netrw, vim.g.loaded_netrwPlugin = 1, 1
   require("nvim-tree").setup()
 
+  use {
+	  "nvim-treesitter/nvim-treesitter",
+	  {
+		  run = ":TSUpdate"
+	  }
+  }
+
   use "michaelb/do-nothing.vim" -- Literally does nothing
-  use ({
-    "folke/noice.nvim",
-	config = function()
-	  require("noice").setup({
-	    lsp = {
-		  -- Overrides markdown editing
-		  override = {
-			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-			["vim.lsp.util.stylize_markdown"] = true,
-		    ["cmp.entry.get_documentation"] = true
-	      },
-		},
-	  presets = {
-		  bottom_search = true,
-		  command_palette = true, -- position the cmdline and popupmenu together
-		  long_message_to_split = true,
-		  inc_rename = false,
-		  lsp_doc_border = false
-	  },
-	})
-	end,
-	requires = {
-		"MunifTanjim/nui.nvim",
-		"rcarriga/nvim-notify"
-	}
-  })
   use {
 	  "folke/trouble.nvim",
 	  requires = "kyazdani42/nvim-web-devicons",
@@ -116,16 +97,20 @@ return packer.startup(function(use)
 	end
   }
   use "andweeb/presence.nvim"
+  use "Glench/Vim-Jinja2-Syntax"
 
   -- HTML
   use "alvan/vim-closetag" -- Closes HTML tags
-  use "AndrewRadev/tagalong.vim" -- Change two HTML tags at the same time
   use  {
 	  "norcalli/nvim-colorizer.lua", -- Adds color visualizer!
 	  config = function()
 		require'colorizer'.setup()
 	end
   }
+
+  -- Snippets
+  use { "L3MON4D3/LuaSnip", run = "make install_jsreqexp" }
+  use "rafamadriz/friendly-snippets"
 
   -- Completion --
   use "hrsh7th/nvim-cmp" -- Adds autocompletion, extensions below
@@ -141,9 +126,25 @@ return packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use "hrsh7th/cmp-nvim-lsp"
 
-  -- Snippets
-  use { "L3MON4D3/LuaSnip", run = "make install_jsreqexp" }
-  use "rafamadriz/friendly-snippets"
+  -- Noice --
+  use ({
+    "folke/noice.nvim",
+	config = function()
+	  require("noice").setup({
+	  presets = {
+		  bottom_search = true,
+		  command_palette = true, -- position the cmdline and popupmenu together
+		  long_message_to_split = true,
+		  inc_rename = false,
+		  lsp_doc_border = false
+	  },
+	})
+	end,
+	requires = {
+		"MunifTanjim/nui.nvim",
+		"rcarriga/nvim-notify"
+	}
+  })
 
   -- Themes -- 
   use "navarasu/onedark.nvim"

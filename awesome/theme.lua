@@ -11,22 +11,22 @@ local theme = {}
 
 theme.font = "sans 8"
 
-theme.bg_normal   = "#282C34"
-theme.bg_focus    = "#ABB2Bf"
-theme.bg_urgent   = "#E06C75"
-theme.bg_minimize = "#ABB2BF"
+theme.bg_normal   = "#665c54"
+theme.bg_focus    = "#bdae93"
+theme.bg_urgent   = "#cc241d"
+theme.bg_minimize = "#3c3836"
 theme.bg_systray  = theme.bg_normal
 
-theme.fg_normal   = "#aaaaaa"
-theme.fg_focus    = "#ffffff"
-theme.fg_urgent   = "#ffffff"
-theme.fg_minimize = "#ffffff"
+theme.fg_normal   = "#bdae93"
+theme.fg_focus    = "#d5c4a1"
+theme.fg_urgent   = "#cc241d"
+theme.fg_minimize = "#665c54"
 
 theme.useless_gap   = dpi(9)
 theme.border_width  = dpi(2)
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
+theme.border_normal = "#665c54"
+theme.border_focus  = "#bdae93"
+theme.border_marked = "#989c1a"
 
 local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_unsel(
