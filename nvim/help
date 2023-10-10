@@ -58,7 +58,6 @@ return packer.startup(function(use)
   -- Disables netrw for tree
   vim.g.loaded_netrw, vim.g.loaded_netrwPlugin = 1, 1
   require("nvim-tree").setup()
-
   use {
 	  "nvim-treesitter/nvim-treesitter",
 	  {
@@ -66,7 +65,6 @@ return packer.startup(function(use)
 	  }
   }
   use "mbbill/undotree"
-  use "tpope/vim-fugitive"
 
   use "michaelb/do-nothing.vim" -- Literally does nothing
   use {
@@ -76,6 +74,13 @@ return packer.startup(function(use)
 	    require("trouble").setup {
 		}
 	  end
+  }
+  use {
+    "phaazon/mind.nvim",
+	requires = { "nvim-lua/plenary.nvim" },
+	config = function()
+	  require'mind'.setup()
+	end
   }
   use {
 	  'nvim-lualine/lualine.nvim',
@@ -103,6 +108,24 @@ return packer.startup(function(use)
 	end
   }
 
+  -- Snippets
+  use { "L3MON4D3/LuaSnip", run = "make install_jsreqexp" }
+  use "rafamadriz/friendly-snippets"
+
+  -- Completion --
+  use "hrsh7th/nvim-cmp" -- Adds autocompletion, extensions below
+  use "hrsh7th/cmp-buffer" -- Buffer completions
+  use "hrsh7th/cmp-path" -- Path completions
+  use "hrsh7th/cmp-cmdline" -- Command line completions
+  use "saadparwaiz1/cmp_luasnip" -- Completion source for nvim-cmp
+
+  -- LSP -- 
+  use "VonHeikemen/lsp-zero.nvim"
+  use "neovim/nvim-lspconfig"
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use "hrsh7th/cmp-nvim-lsp"
+
   -- Noice --
   use ({
     "folke/noice.nvim",
@@ -122,21 +145,6 @@ return packer.startup(function(use)
 		"rcarriga/nvim-notify"
 	}
   })
-
-  -- LSP and Autocompletion --
-  use {
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
-		requires = {
-			{"neovim/nvim-lspconfig"},
-			{"hrsh7th/nvim-cmp"},
-			{"hrsh7th/cmp-nvim-lsp"},
-			{"hrsh7th/cmp-nvim-lua"},
-			{"L3MON4D3/LuaSnip"},
-		}
-	}
-	use {"williamboman/mason.nvim"}
-	use {"williamboman/mason-lspconfig.nvim"}
 
   -- Themes -- 
   use "navarasu/onedark.nvim"

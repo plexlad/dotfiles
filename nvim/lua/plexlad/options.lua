@@ -7,27 +7,37 @@ o.cmdheight = 2
 o.completeopt = { "menuone", "noselect" }
 o.conceallevel = 0
 o.fileencoding = "utf-8"
-o.hlsearch = true
+
+o.hlsearch = false
+o.incsearch = true
 o.ignorecase = true
+
 o.mouse = "a"
 o.pumheight = 10
-o.showtabline = 4
+
+o.showtabline = 2
 o.smartcase = true
 o.smartindent = true
 o.splitbelow = true
+
 o.splitright = true
 o.swapfile = false
 o.termguicolors = true
 o.timeoutlen = 1000
+
 o.undofile = true
+o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
 o.updatetime = 300
 o.writebackup = true
+
 o.expandtab = tab
-o.shiftwidth = 4
-o.tabstop = 4
+o.shiftwidth = 2
+o.tabstop = 2
+
 o.number = true
 o.relativenumber = true
-o.relativenumber = false
+
 o.signcolumn = "yes"
 o.wrap = true
 o.scrolloff = 8

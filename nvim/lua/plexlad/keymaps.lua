@@ -18,10 +18,10 @@ km("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- Open file explorer to the l
 km("n", "<leader>wv", ":vertical split<CR>", opts)
 km("n", "<leader>wh", ":split<CR>", opts)
 
--- New tab
+-- Tab navigation
 km("n", "<leader>n", ":tabnew<CR>", opts)
-km("n", "<leader>l", ":tabnext<CR>", opts)
-km("n", "<leader>h", ":tabprevious<CR>", opts)
+km("n", "<S-l>", ":tabnext<CR>", opts)
+km("n", "<S-h>", ":tabprevious<CR>", opts)
 
 -- Resize with arrows
 km("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -29,12 +29,8 @@ km("n", "<C-Down>", ":resize -2<CR>", opts)
 km("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 km("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 
--- Navigate buffers
-km("n", "<S-l>", ":bnext<CR>", opts)
-km("n", "<S-h>", ":bprevious<CR>", opts)
-
 -- Insert --
--- Press jk fast to enter
+-- Press jk fast to exit
 km("i", "jk", "<ESC>", opts)
 -- Autobrackets
 --km("i", '"', '""<left>', opts)
@@ -45,6 +41,9 @@ km("i", "jk", "<ESC>", opts)
 --km("i", "{<CR>", "{<CR>}<ESC>O", opts)
 --km("i", "{;<CR>", "{<CR>};<ESC>O", opts)
 
+-- Copying and Pasting --
+km("v", "<leader>d", "_d<CR>", opts)
+
 -- Plugins --
 -- Telescope shortcuts
 km("n", "<leader>sf", ":Telescope find_files<CR>", opts)
@@ -54,7 +53,8 @@ km("n", "<leader>st", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 -- trouble
 km("n", "<leader>t", ":Trouble<CR>", opts)
 
--- Mind
-km("n", "<leader>mm", ":MindOpenMain<CR>", opts)
-km("n", "<leader>mp", ":MindOpenSmartProject<CR>", opts)
-km("n", "<leader>mc", ":MindClose<CR>", opts)
+-- Undotree
+km("n", "<leader>u", ":UndotreeToggle<CR>", opts)
+
+-- Fugitive (Git functionality)
+km("n", "<leader>g", ":Git ", { noremap = true })

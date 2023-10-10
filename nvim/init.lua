@@ -5,7 +5,6 @@ local colorscheme = "gruvbox";
 require "plexlad.plugins"
 require "plexlad.options"
 require "plexlad.keymaps"
-require "plexlad.cmp"
 require "plexlad.lsp"
 
 require("notify").setup({
