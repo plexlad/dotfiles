@@ -2,10 +2,10 @@
 local user = "plexlad";
 local colorscheme = "gruvbox";
 
-require "plexlad.plugins"
-require "plexlad.options"
-require "plexlad.keymaps"
-require "plexlad.lsp"
+require "plexlad.plugins"  -- All of my plugins configured with lazy.nvim
+require "plexlad.options"  -- My custom global options
+require "plexlad.keymaps"  -- Custom keymaps
+require "plexlad.lsp"      -- My LSP and cmp configuration for autocomplete
 
 require("notify").setup({
 	background_color = "#000000"
