@@ -31,9 +31,11 @@ o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.updatetime = 300
 o.writebackup = true
 
-o.expandtab = tab
-o.shiftwidth = 2
-o.tabstop = 2
+o.expandtab = true
+o.shiftwidth = 4
+o.smarttab = true
+o.tabstop = 4
+o.softtabstop = 0
 
 o.number = true
 o.relativenumber = true

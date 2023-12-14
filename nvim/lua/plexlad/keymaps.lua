@@ -45,6 +45,10 @@ km("i", "jk", "<ESC>", opts)
 km("v", "<leader>d", "_d<CR>", opts)
 
 -- Plugins --
+-- toggleterm (terminal functionalit)
+km("n", "<leader>th", ":ToggleTerm size=15 direction=horizontal<CR>", opts) -- Horizontal terminal
+km("t", "<Esc>", "<C-\\><C-n>:q<CR>", opts)
+
 -- Telescope shortcuts
 km("n", "<leader>sf", ":Telescope find_files<CR>", opts)
 km("n", "<leader>st", ":Telescope current_buffer_fuzzy_find<CR>", opts)
