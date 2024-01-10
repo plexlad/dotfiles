@@ -25,6 +25,8 @@ o.swapfile = false
 o.termguicolors = true
 o.timeoutlen = 1000
 
+o.colorcolumn = "80"
+
 o.undofile = true
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
