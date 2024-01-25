@@ -12,6 +12,7 @@ km("n", "<C-j>", "<C-w>j", opts)
 km("n", "<C-k>", "<C-w>k", opts)
 km("n", "<C-l>", "<C-w>l", opts)
 
+--km("n", "<leader>e", ":vsplit<CR>:Oil<CR>", opts) -- Open file explorer to the left
 km("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- Open file explorer to the left
 
 -- Split windows

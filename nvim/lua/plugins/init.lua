@@ -19,7 +19,8 @@ return {
 			require("autoclose").setup()
 		end
   },
-  { "nvim-tree/nvim-web-devicons" },
+-- File Manager
+{ "nvim-tree/nvim-web-devicons" },
 	{ 
 		"nvim-tree/nvim-tree.lua",
 		config = function ()
@@ -27,6 +28,11 @@ return {
 			require("nvim-tree").setup()
 		end
 	},
+--  {
+--      "stevearc/oil.nvim",
+--      opts = {},
+--      dependencies = { "nvim-tree/nvim-web-devicons" },
+--  },
   {
 	  "nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
